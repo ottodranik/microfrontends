@@ -3,7 +3,7 @@ export class AppComponent {
         template: `
             <div>
                 <h3>Title: {{ $ctrl.config.title }}</h3>
-                <p>Greeting: {{ $ctrl.hello }}</p>
+                <p>Greeting: {{ $ctrl.hello }} 000</p>
             </div>
         `,
         controller: AppComponent,

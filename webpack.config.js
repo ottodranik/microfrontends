@@ -7,11 +7,12 @@ module.exports = (env) => {
     console.log('Environment: ' + (prod ? 'production' : 'development'));
 
     return {
+        watch: true,
         entry: {
             main: root('src/main.js')
         },
         output: {
-            path: root('dist'),
+            path: prod ? root('dist') : root('dist_dev'),
             filename: prod ? '[name].[chunkhash].js' : '[name].js'
         },
         resolve: {
@@ -19,7 +20,7 @@ module.exports = (env) => {
         },
         devServer: {
             port: 4300,
-            contentBase: 'dist'
+            contentBase: prod ? 'dist' : 'dist_dev'
         },
         devtool: 'source-map',
         module: {
