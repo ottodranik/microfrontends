@@ -6,7 +6,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = merge(common, {
     output: {
-        path: path.resolve(__dirname, '../dist_dev/microfrontend1'),
+        path: path.resolve(__dirname, '../dist/microfrontend1'),
         filename: '[name].js'
     },
     devServer: {
@@ -14,7 +14,7 @@ module.exports = merge(common, {
     },
     devtool: 'inline-source-map',
     plugins: [
-        new CleanWebpackPlugin(['dist_dev/microfrontend1'], { root: path.resolve(__dirname , '..'), verbose: true }),
+        new CleanWebpackPlugin(['dist/microfrontend1'], { root: path.resolve(__dirname , '..'), verbose: true }),
         new HtmlWebpackPlugin({
             chunks: ['main'],
             filename: 'index.html',
